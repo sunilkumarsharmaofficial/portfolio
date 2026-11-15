@@ -1,0 +1,196 @@
+<!doctype html>
+<!--
+HOW TO UPDATE (README)
+1. Your content lives in the CONTENT block inside the script section at the bottom. Edit only that block.
+2. Screenshots: create an "images" folder next to this file and save images with the exact names listed in each project's evidence list (for example images/nancy-workflow.jpg). Any missing file shows a "Drop screenshot at..." placeholder automatically.
+3. Before adding a screenshot, blur or remove API keys, tokens, phone numbers, patient or clinic details, private messages and account names. Use dummy data for demos.
+4. Add a project: copy a block in PROJECTS. Add a book: copy a line in BOOKS.
+5. Deploy: upload index.html and the images folder to GitHub Pages, Netlify or Cloudflare Pages. No build step, no tracking.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Sunil Kumar Sharma — AI &amp; Workflow Automation Projects</title>
+<meta name="description" content="Proof of work by Sunil Kumar Sharma, a Class 12 student: AI and n8n automation projects with screenshots, plus books and academics.">
+<meta property="og:title" content="Sunil Kumar Sharma — Projects &amp; Proof of Work">
+<meta property="og:description" content="Class 12 student building practical AI and workflow automation systems, with screenshots and system documentation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📓%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#faf7f2;--ink:#26231f;--mute:#6b645a;--line:#e2dacb;--acc:#8c3b2a;--soft:#f1ebdf;--card:#fffdf9;--serif:Georgia,"Iowan Old Style","Palatino Linotype",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1a17;--ink:#ece6da;--mute:#a39a8b;--line:#37322b;--acc:#e0a08c;--soft:#25221e;--card:#211e1a}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.6 var(--sans)}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--acc);text-underline-offset:.2em}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.skip{position:absolute;left:-99rem}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.4rem .7rem;z-index:9}
+header.site{border-bottom:1px solid var(--line);padding:.8rem 0}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.2rem 1.5rem}
+.mark{font:600 1.1rem var(--serif);color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 1.2rem;font-size:.9rem}
+nav a{color:var(--mute);text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{color:var(--ink);border-color:var(--acc)}
+main{padding:1.8rem 0 3rem;outline:0}
+h1{font:600 2rem/1.2 var(--serif);margin:0 0 .4rem}
+h2{font:600 1.25rem/1.3 var(--serif);margin:0}
+h2.gh{margin:2rem 0 .8rem;padding-top:1rem;border-top:1px solid var(--line)}
+h3{font:600 .72rem var(--sans);text-transform:uppercase;letter-spacing:.07em;color:var(--mute);margin:1.2rem 0 .4rem}
+.tag{color:var(--acc);font-weight:600;margin:0 0 .8rem}
+.lead{font:1.15rem/1.6 var(--serif);max-width:46rem;margin:0 0 .6rem}
+.meta{color:var(--mute);font-size:.85rem;margin:.2rem 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.2rem;margin-top:1.5rem}
+.ch{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .8rem}
+.num{font:600 .85rem var(--mono);color:var(--acc)}
+.status{margin-left:auto;font-size:.75rem;border:1px solid var(--acc);color:var(--acc);border-radius:99px;padding:.1rem .7rem}
+.sum{margin:.6rem 0 0;max-width:48rem}
+.pills{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:1rem 0 0;list-style:none}
+.pills li{border:1px solid var(--line);background:var(--soft);border-radius:4px;padding:.15rem .6rem;font:.78rem var(--mono)}
+.flow{list-style:none;margin:0;padding:0;counter-reset:s}
+.flow li{counter-increment:s;display:flex;gap:.7rem;padding:.3rem 0;font-size:.95rem}
+.flow li::before{content:counter(s);flex:none;width:1.4rem;height:1.4rem;margin-top:.1rem;border-radius:50%;background:var(--acc);color:var(--bg);font:600 .75rem/1.4rem var(--sans);text-align:center}
+.gallery{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));margin-top:1rem}
+.gallery.big{grid-template-columns:repeat(auto-fill,minmax(17rem,1fr))}
+figure{margin:0}
+.gallery button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--soft);cursor:zoom-in}
+.gallery button:hover{border-color:var(--acc)}
+figure img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+figcaption{font-size:.8rem;color:var(--mute);margin-top:.3rem;line-height:1.4}
+.ph{aspect-ratio:16/10;display:grid;place-content:center;text-align:center;border:1px dashed var(--mute);border-radius:4px;background:var(--soft);color:var(--mute);font-size:.8rem;padding:.6rem}
+.ph code{font-family:var(--mono);word-break:break-all;color:var(--ink)}
+.tools{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));font-size:.85rem;margin:1rem 0}
+.tools label{display:grid;gap:.2rem;color:var(--mute)}
+input,select{font:1rem var(--sans);padding:.5rem .6rem;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%}
+.empty{background:var(--soft);border:1px dashed var(--line);padding:.8rem 1rem;border-radius:4px;color:var(--mute)}
+.book{border-bottom:1px solid var(--line)}
+.book summary{cursor:pointer;padding:.8rem 0;list-style:none}.book summary::-webkit-details-marker{display:none}
+.book summary::before{content:"+ ";color:var(--acc)}.book[open] summary::before{content:"– "}
+.book .t{font-weight:600}
+.bd{display:flex;gap:1rem;padding:0 0 1rem 1rem}
+.cover{flex:none;width:4.5rem;height:6.5rem;object-fit:cover;border:1px solid var(--line);background:var(--soft);display:grid;place-items:center;font:2rem var(--serif);color:var(--mute)}
+.bd p{margin:0 0 .4rem}
+.tl{list-style:none;padding:0;margin:0}
+.tl li{display:grid;grid-template-columns:13rem 1fr;gap:.2rem 1rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+@media(max-width:40rem){.tl li{grid-template-columns:1fr}h1{font-size:1.7rem}}
+dialog{max-width:min(94vw,64rem);border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:1rem}
+dialog img{max-width:100%;max-height:72vh;display:block;margin:0 auto}
+dialog button{font:.9rem var(--sans);margin-top:.6rem;padding:.4rem .9rem;background:none;color:var(--ink);border:1px solid var(--line);border-radius:4px;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:1.2rem 0 2rem;color:var(--mute);font-size:.85rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap top"><a class="mark" href="#projects" data-go="projects">Sunil Kumar Sharma</a><nav id="nav" aria-label="Main"></nav></div></header>
+<div class="wrap"><main id="main" tabindex="-1"><noscript><p>This site needs JavaScript to show its pages.</p></noscript></main></div>
+<footer><div class="wrap">© <span id="yr"></span> Sunil Kumar Sharma · No trackers, no cookies.</div></footer>
+<dialog id="lb" aria-label="Image preview"><img alt=""><p id="lbc" class="meta"></p><button id="lbx" type="button">Close</button></dialog>
+
+<script>
+/* ================= CONTENT: edit this part ================= */
+const S={name:"Sunil Kumar Sharma",
+ tag:"Class 12 Student (PCM) · Self-Taught AI & Workflow Automation Builder · Darbhanga, Bihar, India",
+ intro:"I build practical AI and Python/n8n automation systems to solve real-world business and civic problems. Below is the visual documentation, system architecture, and proof of work for my projects."};
+
+// Each evidence item: src (file in the images folder), caption, date. Missing files show a placeholder with the filename.
+const PROJECTS=[
+ {short:"Nancy AI",title:"Nancy AI — Automated Dental Clinic Receptionist",status:"Production Prototype (Pitched to Local Clinics)",
+  summary:"An AI receptionist built with Python, JSON, and n8n to automate patient appointment booking, answer clinic FAQs, and eliminate missed calls.",
+  steps:["Captures incoming patient inquiries and call/message triggers via webhooks.","Processes natural language queries using LLM prompt routing and checks slot availability.","Logs confirmed patient bookings and contact details into a structured database/Google Sheet.","Pitched 30-day free trials to dental clinics to automate front-desk operations."],
+  stack:["Python","n8n","JSON","REST APIs & Webhooks","LLM Prompt Engineering","Google Sheets API"],
+  evidence:[{src:"images/nancy-workflow.jpg",caption:"n8n Backend Workflow & Webhook Routing",date:"2026-09"},{src:"images/nancy-json.jpg",caption:"JSON Payload & Patient Booking Log",date:"2026-09"},{src:"images/nancy-outreach.jpg",caption:"Clinic Trial Pitch & System Testing",date:"2026-10"}]},
+ {short:"Video Pipeline",title:"Automated Short-Form Video & Affiliate Content Pipeline",status:"Active Daily Workflow",
+  summary:"An end-to-end media pipeline linking Telegram, Python scripts, and AI tools in VS Code to assemble, process, and publish daily short-form video content.",
+  steps:["Submits raw media or triggers via a custom Telegram bot.","Python scripts and n8n nodes process binary video files, generate captions, and format JSON payloads in VS Code.","Automatically publishes reels to Instagram and handles automated comment replies."],
+  stack:["Python","n8n","VS Code","Telegram Bot API","JSON","Instagram Graph API"],
+  evidence:[{src:"images/video-pipeline.jpg",caption:"Automated Video Assembly Workflow",date:"2026-08"},{src:"images/video-code.jpg",caption:"Python & JSON Configuration in VS Code",date:"2026-08"}]},
+ {short:"JanSeva",title:"JanSeva (“Report Trash”) — Civic-Issue Reporting Bot",status:"Working Civic-Tech Prototype & NGO Outreach",
+  summary:"A Telegram chatbot that captures geo-tagged photos of uncollected garbage in Darbhanga, verifies waste via AI Vision, and logs locations into Google Sheets for municipal/NGO action.",
+  steps:["Citizen sends a photo of trash + live GPS coordinates to the Telegram bot.","Workflow reverse-geocodes coordinates into a street address.","OpenAI Vision API verifies genuine municipal waste (filtering out spam).","Logs verified entries into Google Sheets and triggers automated municipal/NGO alerts."],
+  stack:["Telegram Bot API","n8n / Make.com","OpenAI Vision API","Google Sheets","Reverse Geocoding"],
+  evidence:[{src:"images/janseva-bot.jpg",caption:"Telegram Bot Photo & GPS Capture",date:"2026-09"},{src:"images/janseva-sheet.jpg",caption:"Automated Google Sheets Civic Log",date:"2026-09"},{src:"images/janseva-outreach.jpg",caption:"Email Outreach to NGOs for Deployment",date:"2026-09"}]},
+ {short:"Study Utility",title:"Custom Study Utility — Long-Text Audiobook & Guide Generator",status:"Personal Study Tool",
+  summary:"An n8n + JavaScript buffer workflow that bypasses 5,000-character TTS limits to convert study PDFs into merged MP3 audiobooks via Telegram.",
+  steps:["Send long text to the Telegram bot.","An n8n JavaScript node splits it at sentence boundaries into 4,500-character chunks.","Google Cloud TTS converts each chunk; a second node merges the buffers into one MP3 and sends it back."],
+  stack:["n8n","JavaScript (Binary Buffer Merge)","Google Cloud TTS API","Anthropic Claude API","Telegram Bot API"],
+  evidence:[{src:"images/tts-workflow.jpg",caption:"n8n Text-Chunking & MP3 Buffer Merge",date:"2026-08"}]}
+];
+
+const B_INTRO="Alongside my science curriculum, I read widely across classical literature, philosophy, and history. Here are some of the books that have shaped my thinking:";
+// Fields: title, author, category, rating (1-5), review; optional: date ("2026-03"), notes, cover (image path).
+const BOOKS=[
+ {title:"Castes in India / Annihilation of Caste",author:"Dr. B.R. Ambedkar",category:"Philosophy & Society",rating:5,review:"Shaped how I understand social structures, caste dynamics, and systemic reform in India."},
+ {title:"Crime and Punishment",author:"Fyodor Dostoevsky",category:"Literature",rating:5,review:"An intense psychological deep-dive into morality, guilt, and human suffering."},
+ {title:"War and Peace",author:"Leo Tolstoy",category:"Literature",rating:5,review:"A massive exploration of history, free will, and how large geopolitical events shape ordinary lives."},
+ {title:"The Odyssey",author:"Homer",category:"Classical Literature",rating:5,review:"An epic journey of resilience, strategy, and endurance that kept me company during my independent study months in Darbhanga."},
+ {title:"The Art of War",author:"Sun Tzu",category:"Strategy & History",rating:4,review:"Timeless lessons on strategy, preparation, and understanding terrain before taking action."},
+ {title:"A Brief History of Time",author:"Stephen Hawking",category:"Science",rating:5,review:"Sparked my fascination with cosmology, black holes, and relativity."},
+ {title:"My Inventions",author:"Nikola Tesla",category:"Biography & Science",rating:5,review:"An inspiring look into the mind of an unconventional inventor and his relentless pursuit of ideas."},
+ {title:"The Suffering of the World",author:"Arthur Schopenhauer",category:"Philosophy & Society",rating:4,review:"Challenged my perspective on human struggle, resilience, and existence."},
+ {title:"Basics of Morality",author:"Arthur Schopenhauer",category:"Philosophy & Society",rating:4,review:"Explores the philosophical foundations of ethics and human compassion."}
+];
+
+// **double asterisks** make text bold.
+const AB={
+ timeline:[
+  ["Class 12 (PCM)","+2 M.L. Academy, Laheriasarai, Darbhanga (BSEB) · Expected graduation: May 2027"],
+  ["Class 11 (PCM)","Scored **87.8%** (439/500) at +2 M.L. Academy, Darbhanga"],
+  ["Class 10 Board Exam (BSEB)","Scored **87.4%** (437/500) — **3rd rank in school** (out of ~300 students) at Sri Baldev High School, Keotsa, Muzaffarpur"],
+  ["Class 9","Scored **~90.8%** (454/500) at Sri Baldev High School, Keotsa"],
+  ["Context","Self-taught developer from rural Muzaffarpur (Ramauli); living independently in a rented room in Darbhanga during Class 11–12 to access stable electricity and internet."]],
+ skills:["Python","n8n Workflow Automation","JSON & REST APIs","JavaScript (Node/Buffers)","Telegram Bot API","VS Code","Prompt Engineering (Claude & OpenAI)","Google Data Analytics"]};
+
+/* ================= APP: no need to edit below ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+const fmt=d=>{const x=new Date(d);return isNaN(x)?d:x.toLocaleDateString("en",{month:"short",year:"numeric",timeZone:"UTC"})};
+const go=(r,t)=>`<a href="#${r}" data-go="${r}">${t}</a>`;
+const pills=a=>`<ul class="pills">${a.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+const gal=(e,big)=>`<div class="gallery${big?" big":""}">${e.map(x=>`<figure><button type="button" data-lb="${esc(x.src)}" data-cap="${esc(x.caption)}"><img src="${esc(x.src)}" alt="${esc(x.caption)}" loading="lazy"></button><figcaption>${esc(x.caption)}${x.date?" · "+fmt(x.date):""}</figcaption></figure>`).join("")}</div>`;
+// A screenshot that fails to load becomes a placeholder showing the filename to use.
+addEventListener("error",e=>{const b=e.target.closest&&e.target.closest("[data-lb]");if(!b||e.target.tagName!=="IMG")return;const d=document.createElement("div");d.className="ph";d.innerHTML=`<span>📷 Drop screenshot at:<br><code>${esc(b.dataset.lb)}</code></span>`;b.replaceWith(d)},true);
+
+const card=(p,i)=>`<article class="card"><div class="ch"><span class="num">0${i+1}</span><h2>${esc(p.title)}</h2><span class="status">${esc(p.status)}</span></div><p class="sum">${esc(p.summary)}</p>${gal(p.evidence)}<h3>How it works</h3><ol class="flow">${p.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>${pills(p.stack)}</article>`;
+const key=t=>t.replace(/^(the|a)\s+/i,"");
+const book=b=>`<details class="book"><summary><span class="t">${esc(b.title)}</span><br><span class="meta">${[b.author&&"by "+esc(b.author),esc(b.category),b.rating&&`<span aria-label="${b.rating} out of 5">${"★".repeat(b.rating)}${"☆".repeat(5-b.rating)}</span>`,b.date&&fmt(b.date)].filter(Boolean).join(" · ")}</span></summary><div class="bd">${b.cover?`<img class="cover" src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="cover" aria-hidden="true">${esc(key(b.title)[0])}</div>`}<div>${b.review?`<p>${esc(b.review)}</p>`:""}${b.notes?`<p class="meta">Notes: ${esc(b.notes)}</p>`:""}</div></div></details>`;
+const cmp={title:(a,b)=>key(a.title).localeCompare(key(b.title)),author:(a,b)=>(a.author||"").localeCompare(b.author||""),rating:(a,b)=>(b.rating||0)-(a.rating||0)||cmp.title(a,b),new:(a,b)=>(!a.date-!b.date)||(b.date||"").localeCompare(a.date||"")};
+function shelf(){const q=$("#q"),c=$("#cat"),s=$("#sort");if(!q)return;
+ const run=()=>{const t=q.value.trim().toLowerCase();
+  const r=BOOKS.filter(b=>(!c.value||b.category===c.value)&&(b.title+" "+(b.author||"")).toLowerCase().includes(t)).sort(cmp[s.value]);
+  $("#count").textContent=`Showing ${r.length} of ${BOOKS.length} books`;
+  $("#shelf").innerHTML=r.length?r.map(book).join(""):'<p class="empty">No books match. Try a different search or category.</p>'};
+ [q,c,s].forEach(x=>x.addEventListener("input",run));run()}
+
+const NAV=[["projects","Projects & Proof"],["screenshots","All Screenshots"],["books","Bookshelf"],["about","About & Academics"]];
+const V={
+ projects:()=>`<h1>${esc(S.name)}</h1><p class="tag">${esc(S.tag)}</p><p class="lead">${esc(S.intro)}</p><p class="meta">${go("screenshots","View all screenshots →")}</p>${PROJECTS.map(card).join("")}`,
+ screenshots:()=>`<h1>All Screenshots</h1><p class="meta">Workflows, code and bot interfaces from every project. Click any image to zoom.</p>`+PROJECTS.map(p=>`<h2 class="gh">${esc(p.short)}</h2>${gal(p.evidence,1)}`).join(""),
+ books:()=>{const cats=[...new Set(BOOKS.map(b=>b.category).filter(Boolean))].sort();
+  return `<h1>Bookshelf</h1><p class="lead">${esc(B_INTRO)}</p>`+(BOOKS.length?`<div class="tools"><label>Search<input id="q" type="search" placeholder="Title or author"></label><label>Category<select id="cat"><option value="">All categories</option>${cats.map(c=>`<option>${esc(c)}</option>`).join("")}</select></label><label>Sort by<select id="sort"><option value="title">Title A–Z</option><option value="author">Author A–Z</option><option value="rating">Rating (high first)</option>${BOOKS.some(b=>b.date)?'<option value="new">Newest read</option>':""}</select></label></div><p id="count" class="meta" aria-live="polite"></p><div id="shelf"></div>`:'<p class="empty">My book list will appear here soon.</p>')},
+ about:()=>`<h1>About &amp; Academics</h1><h2 class="gh">Academic timeline</h2><ul class="tl">${AB.timeline.map(([a,b])=>`<li><b>${esc(a)}</b><span>${md(b)}</span></li>`).join("")}</ul><h2 class="gh">Technical stack</h2>${pills(AB.skills)}`
+};
+
+let cur;
+function show(h){h=h||"projects";if(h==="home")h="projects";if(!V[h]){if(h==="main")return;h="projects"}
+ if(h===cur)return;const first=cur===undefined;cur=h;
+ $("#main").innerHTML=V[h]();
+ document.title=h==="projects"?S.name+" — AI & Workflow Automation Projects":NAV.find(n=>n[0]===h)[1]+" · "+S.name;
+ document.querySelectorAll("nav a").forEach(a=>{if(a.dataset.go===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+ if(h==="books")shelf();
+ if(!first){scrollTo(0,0);$("#main").focus({preventScroll:true})}}
+
+$("#nav").innerHTML=NAV.map(n=>go(n[0],n[1])).join("");
+$("#yr").textContent=new Date().getFullYear();
+document.addEventListener("click",e=>{
+ const a=e.target.closest("[data-go]");
+ if(a){e.preventDefault();try{location.hash=a.dataset.go}catch(_){}show(a.dataset.go);return}
+ const b=e.target.closest("[data-lb]");
+ if(b){const i=$("#lb img");i.src=b.dataset.lb;i.alt=b.dataset.cap;$("#lbc").textContent=b.dataset.cap;$("#lb").showModal()}});
+$("#lb").addEventListener("click",e=>{if(e.target.id==="lb"||e.target.id==="lbx")$("#lb").close()});
+addEventListener("hashchange",()=>show(location.hash.slice(1)));
+show(location.hash.slice(1));
+</script>
+</body>
+</html>
