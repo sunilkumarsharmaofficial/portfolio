@@ -95,26 +95,21 @@ const S={name:"Sunil Kumar Sharma",
 
 // Each evidence item: src (file in the images folder), caption, date. Missing files show a placeholder with the filename.
 const PROJECTS=[
- {short:"Nancy AI",title:"Nancy AI — Automated Dental Clinic Receptionist",status:"Production Prototype (Pitched to Local Clinics)",
-  summary:"An AI receptionist built with Python, JSON, and n8n to automate patient appointment booking, answer clinic FAQs, and eliminate missed calls.",
-  steps:["Captures incoming patient inquiries and call/message triggers via webhooks.","Processes natural language queries using LLM prompt routing and checks slot availability.","Logs confirmed patient bookings and contact details into a structured database/Google Sheet.","Pitched 30-day free trials to dental clinics to automate front-desk operations."],
-  stack:["Python","n8n","JSON","REST APIs & Webhooks","LLM Prompt Engineering","Google Sheets API"],
+ {short:"Nancy AI",title:"Nancy AI — AI Call Receptionist",status:"Working Prototype",
+  summary:"An AI receptionist for dental clinics that picks up inbound calls and messages, answers common questions, and books appointments so no patient is missed. Built with n8n, Python, and JSON webhooks.",
+  steps:["An incoming call or message triggers the n8n workflow through a JSON webhook.","Python and LLM prompt routing work out whether the patient wants to book or has a question.","The workflow checks slot availability and confirms the appointment.","Confirmed bookings and contact details are logged to a Google Sheet."],
+  stack:["n8n","Python","JSON Webhooks","LLM Prompt Engineering","Google Sheets"],
   evidence:[{src:"images/nancy-workflow.jpg",caption:"n8n Backend Workflow & Webhook Routing",date:"2026-09"},{src:"images/nancy-json.jpg",caption:"JSON Payload & Patient Booking Log",date:"2026-09"},{src:"images/nancy-outreach.jpg",caption:"Clinic Trial Pitch & System Testing",date:"2026-10"}]},
- {short:"Video Pipeline",title:"Automated Short-Form Video & Affiliate Content Pipeline",status:"Active Daily Workflow",
-  summary:"An end-to-end media pipeline linking Telegram, Python scripts, and AI tools in VS Code to assemble, process, and publish daily short-form video content.",
-  steps:["Submits raw media or triggers via a custom Telegram bot.","Python scripts and n8n nodes process binary video files, generate captions, and format JSON payloads in VS Code.","Automatically publishes reels to Instagram and handles automated comment replies."],
-  stack:["Python","n8n","VS Code","Telegram Bot API","JSON","Instagram Graph API"],
+ {short:"Video Pipeline",title:"Automated Video Pipeline — Short-Form Video Automation",status:"Working Pipeline",
+  summary:"A short-form video automation pipeline controlled from a Telegram bot. Python scripts, built and run in VS Code, process the media and assemble finished videos.",
+  steps:["Raw media or a trigger is sent to a custom Telegram bot.","Python scripts process the video files and generate captions, using JSON configuration.","The finished short-form video is assembled automatically."],
+  stack:["Python","Telegram Bot API","VS Code","JSON"],
   evidence:[{src:"images/video-pipeline.jpg",caption:"Automated Video Assembly Workflow",date:"2026-08"},{src:"images/video-code.jpg",caption:"Python & JSON Configuration in VS Code",date:"2026-08"}]},
- {short:"JanSeva",title:"JanSeva (“Report Trash”) — Civic-Issue Reporting Bot",status:"Working Civic-Tech Prototype & NGO Outreach",
-  summary:"A Telegram chatbot that captures geo-tagged photos of uncollected garbage in Darbhanga, verifies waste via AI Vision, and logs locations into Google Sheets for municipal/NGO action.",
-  steps:["Citizen sends a photo of trash + live GPS coordinates to the Telegram bot.","Workflow reverse-geocodes coordinates into a street address.","OpenAI Vision API verifies genuine municipal waste (filtering out spam).","Logs verified entries into Google Sheets and triggers automated municipal/NGO alerts."],
-  stack:["Telegram Bot API","n8n / Make.com","OpenAI Vision API","Google Sheets","Reverse Geocoding"],
-  evidence:[{src:"images/janseva-bot.jpg",caption:"Telegram Bot Photo & GPS Capture",date:"2026-09"},{src:"images/janseva-sheet.jpg",caption:"Automated Google Sheets Civic Log",date:"2026-09"},{src:"images/janseva-outreach.jpg",caption:"Email Outreach to NGOs for Deployment",date:"2026-09"}]},
- {short:"Study Utility",title:"Custom Study Utility — Long-Text Audiobook & Guide Generator",status:"Personal Study Tool",
-  summary:"An n8n + JavaScript buffer workflow that bypasses 5,000-character TTS limits to convert study PDFs into merged MP3 audiobooks via Telegram.",
-  steps:["Send long text to the Telegram bot.","An n8n JavaScript node splits it at sentence boundaries into 4,500-character chunks.","Google Cloud TTS converts each chunk; a second node merges the buffers into one MP3 and sends it back."],
-  stack:["n8n","JavaScript (Binary Buffer Merge)","Google Cloud TTS API","Anthropic Claude API","Telegram Bot API"],
-  evidence:[{src:"images/tts-workflow.jpg",caption:"n8n Text-Chunking & MP3 Buffer Merge",date:"2026-08"}]}
+ {short:"JanSeva",title:"JanSeva (“Report Trash”) — Civic-Issue Telegram Chatbot",status:"Working Prototype",
+  summary:"A Telegram chatbot where citizens report uncollected street garbage in Darbhanga. It verifies the photo with AI Vision and checks the live GPS location, then logs verified reports to Google Sheets for municipal and NGO follow-up.",
+  steps:["A citizen sends a photo of the garbage and their live GPS coordinates to the Telegram bot.","The coordinates are reverse-geocoded into a street address.","The OpenAI Vision API confirms the photo shows genuine street garbage and filters out spam.","Verified reports are logged to Google Sheets with the address and coordinates."],
+  stack:["Telegram Bot API","OpenAI Vision API","Google Sheets","Reverse Geocoding"],
+  evidence:[{src:"images/janseva-bot.jpg",caption:"Telegram Bot Photo & GPS Capture",date:"2026-09"},{src:"images/janseva-sheet.jpg",caption:"Automated Google Sheets Civic Log",date:"2026-09"},{src:"images/janseva-outreach.jpg",caption:"Email Outreach to NGOs for Deployment",date:"2026-09"}]}
 ];
 
 const B_INTRO="Alongside my science curriculum, I read widely across classical literature, philosophy, and history. Here are some of the books that have shaped my thinking:";
@@ -125,8 +120,6 @@ const BOOKS=[
  {title:"War and Peace",author:"Leo Tolstoy",category:"Literature",rating:5,review:"A massive exploration of history, free will, and how large geopolitical events shape ordinary lives."},
  {title:"The Odyssey",author:"Homer",category:"Classical Literature",rating:5,review:"An epic journey of resilience, strategy, and endurance that kept me company during my independent study months in Darbhanga."},
  {title:"The Art of War",author:"Sun Tzu",category:"Strategy & History",rating:4,review:"Timeless lessons on strategy, preparation, and understanding terrain before taking action."},
- {title:"A Brief History of Time",author:"Stephen Hawking",category:"Science",rating:5,review:"Sparked my fascination with cosmology, black holes, and relativity."},
- {title:"My Inventions",author:"Nikola Tesla",category:"Biography & Science",rating:5,review:"An inspiring look into the mind of an unconventional inventor and his relentless pursuit of ideas."},
  {title:"The Suffering of the World",author:"Arthur Schopenhauer",category:"Philosophy & Society",rating:4,review:"Challenged my perspective on human struggle, resilience, and existence."},
  {title:"Basics of Morality",author:"Arthur Schopenhauer",category:"Philosophy & Society",rating:4,review:"Explores the philosophical foundations of ethics and human compassion."}
 ];
@@ -136,8 +129,8 @@ const AB={
  timeline:[
   ["Class 12 (PCM)","+2 M.L. Academy, Laheriasarai, Darbhanga (BSEB) · Expected graduation: May 2027"],
   ["Class 11 (PCM)","Scored **87.8%** (439/500) at +2 M.L. Academy, Darbhanga"],
-  ["Class 10 Board Exam (BSEB)","Scored **87.4%** (437/500) — **3rd rank in school** (out of ~300 students) at Sri Baldev High School, Keotsa, Muzaffarpur"],
-  ["Class 9","Scored **~90.8%** (454/500) at Sri Baldev High School, Keotsa"],
+  ["Class 10 Board Exam (BSEB)","Scored **87.4%** (437/500) — **3rd rank in school** (out of nearly 400 students) at Sri Baldev High School, Keotsa, Muzaffarpur"],
+  ["Class 9","Internal school year. In the BSEB system, Class 9 has no board exam, so no board marksheet is issued."],
   ["Context","Self-taught developer from rural Muzaffarpur (Ramauli); living independently in a rented room in Darbhanga during Class 11–12 to access stable electricity and internet."]],
  skills:["Python","n8n Workflow Automation","JSON & REST APIs","JavaScript (Node/Buffers)","Telegram Bot API","VS Code","Prompt Engineering (Claude & OpenAI)","Google Data Analytics"]};
 
